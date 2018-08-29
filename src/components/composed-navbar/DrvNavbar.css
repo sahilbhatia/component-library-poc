@@ -1,0 +1,20 @@
+#drv-navbar {
+  height: 7ex;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+#drv-pushable-segment {
+  height: 92vh;
+  margin-top: 0;
+  border-radius: 0;
+  border: 0;
+}
+
+.ui.feed > .event > .content .summary {
+  font-weight: normal;
+}
+
+.ui.menu .item > .label {
+  margin-left: unset;
+}

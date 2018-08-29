@@ -1,7 +1,6 @@
 import React from 'react';
 
 import DrvNavbar from './components/composed-navbar/DrvNavbar.js';
-import druvaLogoImage from './images/druva_215.png';
 import DrvMenu from './common-components/menu/DrvMenu.js';
 import DrvDropdown from './common-components/dropdown/DrvDropdown.js';
 import DrvIconWithBadge from './common-components/icon-with-badge/DrvIconWithBadge.js';
@@ -9,12 +8,21 @@ import DrvIconWithBadge from './common-components/icon-with-badge/DrvIconWithBad
 const App = props => {
 	return (
 		<DrvNavbar
-			logo = { druvaLogoImage }
 			productName = 'Phoenix'
 			productUrl = '/phoenix'
-			menuItems = { menuItems }
-			notificationIcons = { notificationIcons }
-			adminIcons = { adminIcons }
+			productMenu = { productMenuItems }
+			homeUrl='/home'
+			inSyncUrl='/insync'
+			phoenixUrl='/phoenix'
+			cloudRangerUrl='/cloud-ranger'
+			manageAdministratorsUrl='/manage-administrators'
+			druvaCloudSettingsUrl='/druva-cloud-settings'
+			accountDetailsUrl='/account-details'
+			cloudUpdateNotifications={ cloudUpdateNotifications }
+			userName='Krishna Shekhar'
+			userEmail='krishna.shekhar@druva.com'
+			profileUrl='/profile'
+			logoutUrl='/logout'
 		/>
 	);
 }
@@ -23,7 +31,7 @@ const orgSelected = (event, data) => {
 	alert(`${data.text} clicked`);
 }
 
-const menuItems =
+const productMenuItems =
 	<React.Fragment>
 		<DrvDropdown text='All Organizations' className='item'>
 			<DrvDropdown.Menu>
@@ -39,10 +47,6 @@ const menuItems =
 		<DrvMenu.Item name='home' as='a' href='/home' />
 		<DrvMenu.Item name='messages' as='a' href='/messages' />
 		<DrvMenu.Item name='friends' as='a' href='/friends' />
-	</React.Fragment>
-
-const notificationIcons =
-	<React.Fragment>
 		<DrvMenu.Item icon='setting' />
 		<DrvMenu.Item>
 			<DrvIconWithBadge icon='clock outline' labelColor='green' labelText='3' />
@@ -52,13 +56,22 @@ const notificationIcons =
 		</DrvMenu.Item>
 	</React.Fragment>
 
-const adminIcons =
-	<React.Fragment>
-		<DrvMenu.Item>
-			<DrvIconWithBadge icon='bullhorn' labelColor='blue' labelText='3' />
-		</DrvMenu.Item>
-		<DrvMenu.Item icon='help circle' />
-		<DrvMenu.Item icon='circle' />
-	</React.Fragment>
+const cloudUpdateNotifications = [
+	{
+		key: 'item-1',
+		text: 'Phoenix Cloud Update',
+		date: 'January 23, 2017'
+	},
+	{
+		key: 'item-2',
+		text: 'inSync Cloud Update Release',
+		date: 'January 23, 2017'
+	},
+	{
+		key: 'item-3',
+		text: 'Apollo Cloud Update',
+		date: 'January 23, 2017'
+	}
+];
 
 export default App;
