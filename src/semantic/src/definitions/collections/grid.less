@@ -263,6 +263,7 @@
 .ui[class*="twelve column"].grid > .column:not(.row) {
   width: @twelveColumn;
 }
+/*
 .ui[class*="thirteen column"].grid > .row > .column,
 .ui[class*="thirteen column"].grid > .column:not(.row) {
   width: @thirteenColumn;
@@ -279,7 +280,7 @@
 .ui[class*="sixteen column"].grid > .column:not(.row) {
   width: @sixteenColumn;
 }
-
+*/
 /* Row Based Overrides */
 .ui.grid > [class*="one column"].row > .column {
   width: @oneColumn !important;
@@ -317,18 +318,18 @@
 .ui.grid > [class*="twelve column"].row > .column {
   width: @twelveColumn !important;
 }
-.ui.grid > [class*="thirteen column"].row > .column {
-  width: @thirteenColumn !important;
-}
-.ui.grid > [class*="fourteen column"].row > .column {
-  width: @fourteenColumn !important;
-}
-.ui.grid > [class*="fifteen column"].row > .column {
-  width: @fifteenColumn !important;
-}
-.ui.grid > [class*="sixteen column"].row > .column {
-  width: @sixteenColumn !important;
-}
+// .ui.grid > [class*="thirteen column"].row > .column {
+//   width: @thirteenColumn !important;
+// }
+// .ui.grid > [class*="fourteen column"].row > .column {
+//   width: @fourteenColumn !important;
+// }
+// .ui.grid > [class*="fifteen column"].row > .column {
+//   width: @fifteenColumn !important;
+// }
+// .ui.grid > [class*="sixteen column"].row > .column {
+//   width: @sixteenColumn !important;
+// }
 
 /* Celled Page */
 .ui.celled.page.grid {
@@ -412,6 +413,7 @@
 .ui.column.grid > [class*="twelve wide"].column {
   width: @twelveWide !important;
 }
+/*
 .ui.grid > .row > [class*="thirteen wide"].column,
 .ui.grid > .column.row > [class*="thirteen wide"].column,
 .ui.grid > [class*="thirteen wide"].column,
@@ -436,7 +438,7 @@
 .ui.column.grid > [class*="sixteen wide"].column {
   width: @sixteenWide !important;
 }
-
+*/
 /*----------------------
     Width per Device
 -----------------------*/
@@ -515,6 +517,7 @@
   .ui.column.grid > [class*="twelve wide mobile"].column {
     width: @twelveWide !important;
   }
+  /*
   .ui.grid > .row > [class*="thirteen wide mobile"].column,
   .ui.grid > .column.row > [class*="thirteen wide mobile"].column,
   .ui.grid > [class*="thirteen wide mobile"].column,
@@ -539,6 +542,7 @@
   .ui.column.grid > [class*="sixteen wide mobile"].column {
     width: @sixteenWide !important;
   }
+  */
 }
 
 /* Tablet Sizing Combinations */
@@ -615,6 +619,7 @@
   .ui.column.grid > [class*="twelve wide tablet"].column {
     width: @twelveWide !important;
   }
+  /*
   .ui.grid > .row > [class*="thirteen wide tablet"].column,
   .ui.grid > .column.row > [class*="thirteen wide tablet"].column,
   .ui.grid > [class*="thirteen wide tablet"].column,
@@ -639,6 +644,7 @@
   .ui.column.grid > [class*="sixteen wide tablet"].column {
     width: @sixteenWide !important;
   }
+  */
 }
 
 /* Computer/Desktop Sizing Combinations */
@@ -715,6 +721,7 @@
   .ui.column.grid > [class*="twelve wide computer"].column {
     width: @twelveWide !important;
   }
+  /*
   .ui.grid > .row > [class*="thirteen wide computer"].column,
   .ui.grid > .column.row > [class*="thirteen wide computer"].column,
   .ui.grid > [class*="thirteen wide computer"].column,
@@ -739,6 +746,7 @@
   .ui.column.grid > [class*="sixteen wide computer"].column {
     width: @sixteenWide !important;
   }
+  */
 }
 
 /* Large Monitor Sizing Combinations */
@@ -815,6 +823,7 @@
   .ui.column.grid > [class*="twelve wide large screen"].column {
     width: @twelveWide !important;
   }
+  /*
   .ui.grid > .row > [class*="thirteen wide large screen"].column,
   .ui.grid > .column.row > [class*="thirteen wide large screen"].column,
   .ui.grid > [class*="thirteen wide large screen"].column,
@@ -839,6 +848,7 @@
   .ui.column.grid > [class*="sixteen wide large screen"].column {
     width: @sixteenWide !important;
   }
+  */
 }
 
 /* Widescreen Sizing Combinations */
@@ -915,6 +925,7 @@
   .ui.column.grid > [class*="twelve wide widescreen"].column {
     width: @twelveWide !important;
   }
+  /*
   .ui.grid > .row > [class*="thirteen wide widescreen"].column,
   .ui.grid > .column.row > [class*="thirteen wide widescreen"].column,
   .ui.grid > [class*="thirteen wide widescreen"].column,
@@ -938,7 +949,7 @@
   .ui.grid > [class*="sixteen wide widescreen"].column,
   .ui.column.grid > [class*="sixteen wide widescreen"].column {
     width: @sixteenWide !important;
-  }
+  }*/
 }
 
 /*----------------------
@@ -1599,6 +1610,7 @@
   .ui.grid > [class*="twelve column"].doubling.row.row > .column {
     width: @sixColumn !important;
   }
+  /*
   .ui[class*="thirteen column"].doubling.grid > .row > .column,
   .ui[class*="thirteen column"].doubling.grid > .column:not(.row),
   .ui.grid > [class*="thirteen column"].doubling.row.row > .column {
@@ -1619,6 +1631,7 @@
   .ui.grid > [class*="sixteen column"].doubling.row.row > .column {
     width: @eightColumn !important;
   }
+  */
 }
 
 /* Mobile Only */
@@ -1690,6 +1703,7 @@
   .ui.grid > [class*="twelve column"].doubling:not(.stackable).row.row > .column {
     width: @threeColumn !important;
   }
+  /*
   .ui[class*="thirteen column"].doubling:not(.stackable).grid > .row > .column,
   .ui[class*="thirteen column"].doubling:not(.stackable).grid > .column:not(.row),
   .ui.grid > [class*="thirteen column"].doubling:not(.stackable).row.row > .column {
@@ -1710,6 +1724,7 @@
   .ui.grid > [class*="sixteen column"].doubling:not(.stackable).row.row > .column {
     width: @fourColumn !important;
   }
+  */
 }
 
 /*-------------------

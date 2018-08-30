@@ -800,18 +800,20 @@
 .ui.twelve.column.table td {
   width: 8.33333333%;
 }
+/*
 .ui.thirteen.column.table td {
-  width: 7.69230769%;
+  width: @thirteenColumn;
 }
 .ui.fourteen.column.table td {
-  width: 7.14285714%;
+  width: @fourteenColumn;
 }
 .ui.fifteen.column.table td {
-  width: 6.66666667%;
+  width: @fifteenColumn;
 }
 .ui.sixteen.column.table td {
-  width: 6.25%;
+  width: @sixteenColumn;
 }
+*/
 
 /* Column Width */
 .ui.table th.one.wide,
@@ -862,22 +864,24 @@
 .ui.table td.twelve.wide {
   width: 75%;
 }
+/*
 .ui.table th.thirteen.wide,
 .ui.table td.thirteen.wide {
-  width: 81.25%;
+  width: @thirteenWide;
 }
 .ui.table th.fourteen.wide,
 .ui.table td.fourteen.wide {
-  width: 87.5%;
+  width: @fourteenWide;
 }
 .ui.table th.fifteen.wide,
 .ui.table td.fifteen.wide {
-  width: 93.75%;
+  width: @fifteenWide;
 }
 .ui.table th.sixteen.wide,
 .ui.table td.sixteen.wide {
-  width: 100%;
+  width: @sixteenWide;
 }
+*/
 
 /*--------------
     Sortable

@@ -7,23 +7,19 @@ import DrvIconWithBadge from './common-components/icon-with-badge/DrvIconWithBad
 
 const App = props => {
 	return (
-		<DrvNavbar
-			productName = 'Phoenix'
-			productUrl = '/phoenix'
-			productMenu = { productMenuItems }
-			homeUrl='/home'
-			inSyncUrl='/insync'
-			phoenixUrl='/phoenix'
-			cloudRangerUrl='/cloud-ranger'
-			manageAdministratorsUrl='/manage-administrators'
-			druvaCloudSettingsUrl='/druva-cloud-settings'
-			accountDetailsUrl='/account-details'
-			cloudUpdateNotifications={ cloudUpdateNotifications }
-			userName='Krishna Shekhar'
-			userEmail='krishna.shekhar@druva.com'
-			profileUrl='/profile'
-			logoutUrl='/logout'
-		/>
+		<React.Fragment>
+			asdasd
+			<div class="ui grid">
+				<div class="four wide column"></div>
+				<div class="four wide column"></div>
+				<div class="four wide column"></div>
+				<div class="four wide column"></div>
+				<div class="four wide column"></div>
+				<div class="four wide column"></div>
+				<div class="four wide column"></div>
+				<div class="four wide column"></div>
+			</div>
+		</React.Fragment>
 	);
 }
 
