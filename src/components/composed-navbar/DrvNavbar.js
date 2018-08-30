@@ -15,6 +15,8 @@ import DrvSegment from '../../common-components/segment/DrvSegment.js';
 import DrvGlobalMenu from '../../common-components/global-menu/DrvGlobalMenu.js';
 import DrvLabel from '../../common-components/label/DrvLabel';
 import DrvDivider from '../../common-components/divider/DrvDivider';
+import DrvDropdown from '../../common-components/dropdown/DrvDropdown';
+import DrvResponsive from '../../common-components/responsive/DrvResponsive';
 
 class DrvNavbar extends Component {
 	state = {
@@ -47,7 +49,7 @@ class DrvNavbar extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				<DrvMenu inverted borderless size='small' id='drv-navbar'>
+				<DrvMenu inverted borderless size='small'>
 					{/* Logo */}
 					<DrvMenu.Item onClick={ this.toggleGlobalMenuVisibility }>
 						<DrvLogo />
@@ -56,10 +58,19 @@ class DrvNavbar extends Component {
 					{/* Product Name */}
 					<DrvMenu.Item content={ this.props.productName } as='a' href={ this.props.productUrl } />
 
-					{/* Menu Items */}
-					<DrvMenu.Menu position='left'>
+					{/* Product Menu - Desktop view and above */}
+					<DrvResponsive as={ DrvMenu.Menu } minWidth={769} className={ this.props.productMenu ? null : 'hide' }>
 						{ this.props.productMenu }
-					</DrvMenu.Menu>
+					</DrvResponsive>
+
+					{/* Product Menu - Tablet view and below */}
+					<DrvResponsive as={ DrvMenu.Menu } maxWidth={768} className={ this.props.productMenu ? null : 'hide' }>
+						<DrvDropdown item icon='bars'>
+							<DrvDropdown.Menu>
+								{ this.props.productMenu }
+							</DrvDropdown.Menu>
+						</DrvDropdown>
+					</DrvResponsive>
 
 					{/* Admin Icons */}
 					<DrvMenu.Menu position='right'>
@@ -161,7 +172,7 @@ class DrvNavbar extends Component {
 				</DrvMenu>
 
 				{/* Global flyout menu */}
-				<DrvSidebar.Pushable as={ DrvSegment } id='drv-pushable-segment'>
+				<DrvSidebar.Pushable as={ DrvSegment }>
 					<DrvGlobalMenu
 						globalMenuVisible={ this.state.globalMenuVisible }
 						homeUrl={ this.props.homeUrl }

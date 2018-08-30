@@ -1,10 +1,10 @@
-#drv-navbar {
+.ui.small.borderless.inverted.menu {
   height: 7ex;
   margin-bottom: 0;
   border-radius: 0;
 }
 
-#drv-pushable-segment {
+.ui.segment.pushable {
   height: 92vh;
   margin-top: 0;
   border-radius: 0;
@@ -17,4 +17,8 @@
 
 .ui.menu .item > .label {
   margin-left: unset;
+}
+
+.hide {
+  display: none !important;
 }
