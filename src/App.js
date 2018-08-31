@@ -74,6 +74,42 @@ const cloudUpdateNotifications = [
 		text: 'Apollo Cloud Update',
 		url: '/item-3',
 		date: 'January 23, 2017'
+	},
+	{
+		key: 'item-4',
+		text: 'Apollo Cloud Update',
+		url: '/item-4',
+		date: 'January 23, 2017'
+	},
+	{
+		key: 'item-5',
+		text: 'Apollo Cloud Update',
+		url: '/item-5',
+		date: 'January 23, 2017'
+	},
+	{
+		key: 'item-6',
+		text: 'Apollo Cloud Update',
+		url: '/item-6',
+		date: 'January 23, 2017'
+	},
+	{
+		key: 'item-7',
+		text: 'Apollo Cloud Update',
+		url: '/item-7',
+		date: 'January 23, 2017'
+	},
+	{
+		key: 'item-8',
+		text: 'Apollo Cloud Update',
+		url: '/item-8',
+		date: 'January 23, 2017'
+	},
+	{
+		key: 'item-9',
+		text: 'Apollo Cloud Update',
+		url: '/item-9',
+		date: 'January 23, 2017'
 	}
 ];
 

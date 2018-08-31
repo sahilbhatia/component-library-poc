@@ -32,7 +32,7 @@ class DrvNavbar extends Component {
 	}
 
 	platformUpdatesFeed = () => {
-		return this.props.cloudUpdateNotifications.map((notification) => {
+		return this.props.cloudUpdateNotifications.slice(0, 5).map((notification) => {
 			return (
 				<DrvFeed.Event key={ notification.key }>
 					<DrvFeed.Content>
