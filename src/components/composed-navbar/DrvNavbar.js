@@ -99,6 +99,7 @@ class DrvNavbar extends Component {
 							hideOnScroll
 							position='bottom center'
 							verticalOffset={-10}
+							horizontalOffset={-4}
 							flowing
 						/>
 
@@ -170,6 +171,7 @@ class DrvNavbar extends Component {
 							hideOnScroll
 							position='bottom center'
 							verticalOffset={-10}
+							horizontalOffset={-4}
 							flowing
 						/>
 					</DrvMenu.Menu>
