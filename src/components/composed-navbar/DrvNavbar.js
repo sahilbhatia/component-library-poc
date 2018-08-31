@@ -20,11 +20,15 @@ import DrvResponsive from '../../common-components/responsive/DrvResponsive';
 
 class DrvNavbar extends Component {
 	state = {
-		globalMenuVisible: false
+		isGlobalMenuVisible: false
 	}
 
 	toggleGlobalMenuVisibility = () => {
-		this.setState({ globalMenuVisible: !this.state.globalMenuVisible })
+		this.setState({ isGlobalMenuVisible: !this.state.isGlobalMenuVisible })
+	}
+
+	hideGlobalMenu = () => {
+		this.setState({ isGlobalMenuVisible: false })
 	}
 
 	platformUpdatesFeed = () => {
@@ -174,7 +178,8 @@ class DrvNavbar extends Component {
 				{/* Global flyout menu */}
 				<DrvSidebar.Pushable as={ DrvSegment }>
 					<DrvGlobalMenu
-						globalMenuVisible={ this.state.globalMenuVisible }
+						isGlobalMenuVisible={ this.state.isGlobalMenuVisible }
+						hideGlobalMenu={ this.hideGlobalMenu }
 						homeUrl={ this.props.homeUrl }
 						inSyncUrl={ this.props.inSyncUrl }
 						phoenixUrl={ this.props.phoenixUrl }
@@ -184,7 +189,7 @@ class DrvNavbar extends Component {
 						accountDetailsUrl={ this.props.accountDetailsUrl }
 					/>
 
-					<DrvSidebar.Pusher dimmed={ this.state.globalMenuVisible } />
+					<DrvSidebar.Pusher dimmed={ this.state.isGlobalMenuVisible } />
 				</DrvSidebar.Pushable>
 			</React.Fragment>
 		);

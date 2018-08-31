@@ -18,7 +18,8 @@ const DrvGlobalMenu = props => {
       borderless
       size='small'
       width='wide'
-      visible={ props.globalMenuVisible }
+      visible={ props.isGlobalMenuVisible }
+      onHide={ props.hideGlobalMenu }
     >
       <DrvMenu.Item as='a' href={ props.homeUrl }>
         <DrvIcon className='drv-icon' name='home' />
