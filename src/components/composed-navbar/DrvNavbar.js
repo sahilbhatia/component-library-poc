@@ -36,10 +36,15 @@ class DrvNavbar extends Component {
 			return (
 				<DrvFeed.Event key={ notification.key }>
 					<DrvFeed.Content>
-						<DrvFeed.Summary
-							date={ notification.date }
-							content={ `${ notification.text },` }
-						/>
+						<DrvFeed.Summary>
+							<DrvFeed.Label
+								as='a'
+								href={ notification.url }
+								content={ notification.text }
+								className='ellipsis'
+							/>
+							<DrvFeed.Date content={ notification.date } />
+						</DrvFeed.Summary>
 					</DrvFeed.Content>
 				</DrvFeed.Event>
 			);
@@ -100,7 +105,6 @@ class DrvNavbar extends Component {
 							position='bottom center'
 							verticalOffset={-10}
 							horizontalOffset={-4}
-							flowing
 						/>
 
 						{/* Documentation menu popup */}
@@ -213,6 +217,7 @@ DrvNavbar.propTypes = {
 		PropTypes.shape({
 			key: PropTypes.string.isRequired,
 			text: PropTypes.string.isRequired,
+			url: PropTypes.string.isRequired,
 			date: PropTypes.string.isRequired
 		})
 	).isRequired,

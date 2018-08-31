@@ -22,3 +22,24 @@
 .hide {
   display: none !important;
 }
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ui.popup {
+  max-width: 300px;
+}
+
+.ui.feed > .event > .content > .summary > a.label {
+  display: inline-block;
+  /* 112px = 106px (width of September - longest month name) + 6px (margin-left) */
+  max-width: calc(100% - 112px);
+  vertical-align: bottom;
+}
+
+.ui.feed > .event > .content .summary > .date {
+  float: right;
+}

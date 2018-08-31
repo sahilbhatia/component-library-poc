@@ -60,16 +60,19 @@ const cloudUpdateNotifications = [
 	{
 		key: 'item-1',
 		text: 'Phoenix Cloud Update',
+		url: '/item-1',
 		date: 'January 23, 2017'
 	},
 	{
 		key: 'item-2',
 		text: 'inSync Cloud Update Release',
-		date: 'January 23, 2017'
+		url: '/item-2',
+		date: 'September 23, 2017'
 	},
 	{
 		key: 'item-3',
 		text: 'Apollo Cloud Update',
+		url: '/item-3',
 		date: 'January 23, 2017'
 	}
 ];
