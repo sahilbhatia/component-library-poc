@@ -133,7 +133,6 @@ class DrvNavbar extends Component {
 							hideOnScroll
 							position='bottom center'
 							verticalOffset={-10}
-							flowing
 						/>
 
 						{/* Profile menu popup */}
@@ -158,7 +157,7 @@ class DrvNavbar extends Component {
 										</DrvList.Icon>
 
 										<DrvList.Content verticalAlign='middle'>
-											<DrvList.Description as='a' href={ this.props.profileUrl }>
+											<DrvList.Description as='a' href={ this.props.profileUrl } className='ellipsis'>
 												{ this.props.userEmail }
 											</DrvList.Description>
 										</DrvList.Content>
@@ -176,7 +175,6 @@ class DrvNavbar extends Component {
 							position='bottom center'
 							verticalOffset={-10}
 							horizontalOffset={-4}
-							flowing
 						/>
 					</DrvMenu.Menu>
 				</DrvMenu>

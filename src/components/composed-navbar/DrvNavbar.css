@@ -33,6 +33,11 @@
   max-width: 300px;
 }
 
+.ui.list > .item .middle.aligned.content {
+  /* 230px = 270px (.ui.popup excluding border & padding) - 40px (for icon) */
+  max-width: 230px;
+}
+
 .ui.feed > .event > .content > .summary > a.label {
   display: inline-block;
   /* 112px = 106px (width of September - longest month name) + 6px (margin-left) */
