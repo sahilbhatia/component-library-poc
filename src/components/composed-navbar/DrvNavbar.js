@@ -32,23 +32,37 @@ class DrvNavbar extends Component {
 	}
 
 	platformUpdatesFeed = () => {
-		return this.props.cloudUpdateNotifications.slice(0, 5).map((notification) => {
+		const cloudUpdateNotifications = this.props.cloudUpdateNotifications.slice(0, 5);
+
+		if ( cloudUpdateNotifications.length > 0 ) {
+			return cloudUpdateNotifications.map((notification) => {
+				return (
+					<DrvFeed.Event key={ notification.key }>
+						<DrvFeed.Content>
+							<DrvFeed.Summary>
+								<DrvFeed.Label
+									as='a'
+									href={ notification.url }
+									content={ notification.text }
+									className='ellipsis'
+								/>
+								<DrvFeed.Date content={ notification.date } />
+							</DrvFeed.Summary>
+						</DrvFeed.Content>
+					</DrvFeed.Event>
+				);
+			});
+		} else {
 			return (
-				<DrvFeed.Event key={ notification.key }>
+				<DrvFeed.Event>
 					<DrvFeed.Content>
 						<DrvFeed.Summary>
-							<DrvFeed.Label
-								as='a'
-								href={ notification.url }
-								content={ notification.text }
-								className='ellipsis'
-							/>
-							<DrvFeed.Date content={ notification.date } />
+							<DrvFeed.Date content='No Updates Available' />
 						</DrvFeed.Summary>
 					</DrvFeed.Content>
 				</DrvFeed.Event>
 			);
-		});
+		}
 	}
 
 	getInitials = () => {
