@@ -3,19 +3,14 @@ import PropTypes from 'prop-types';
 
 import './DrvNavbar.css';
 
+import DrvNavbarDesktop from './DrvNavbarDesktop';
+import DrvNavbarMobile from './DrvNavbarMobile';
+
 import DrvMenu from '../../common-components/menu/DrvMenu.js';
-import DrvLogo from '../../common-components/logo/DrvLogo.js';
-import DrvIconWithBadge from '../../common-components/icon-with-badge/DrvIconWithBadge.js';
-import DrvPopup from '../../common-components/popup/DrvPopup.js';
-import DrvList from '../../common-components/list/DrvList.js';
 import DrvFeed from '../../common-components/feed/DrvFeed.js';
-import DrvButton from '../../common-components/button/DrvButton.js';
 import DrvSidebar from '../../common-components/sidebar/DrvSidebar.js';
 import DrvSegment from '../../common-components/segment/DrvSegment.js';
 import DrvGlobalMenu from '../../common-components/global-menu/DrvGlobalMenu.js';
-import DrvLabel from '../../common-components/label/DrvLabel';
-import DrvDivider from '../../common-components/divider/DrvDivider';
-import DrvDropdown from '../../common-components/dropdown/DrvDropdown';
 import DrvResponsive from '../../common-components/responsive/DrvResponsive';
 
 class DrvNavbar extends Component {
@@ -72,126 +67,25 @@ class DrvNavbar extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				<DrvMenu inverted borderless size='small'>
-					{/* Logo */}
-					<DrvMenu.Item onClick={ this.toggleGlobalMenuVisibility }>
-						<DrvLogo />
-					</DrvMenu.Item>
+				<DrvResponsive as={ DrvMenu.Menu } minWidth={769}>
+					<DrvNavbarDesktop
+						{ ...this.props }
+						cloudUpdateNotifications={ this.props.cloudUpdateNotifications }
+						platformUpdatesFeed={ this.platformUpdatesFeed }
+						getInitials={ this.getInitials }
+						toggleGlobalMenuVisibility={ this.toggleGlobalMenuVisibility }
+					/>
+				</DrvResponsive>
 
-					{/* Product Name */}
-					<DrvMenu.Item content={ this.props.productName } as='a' href={ this.props.productUrl } />
-
-					{/* Product Menu - Desktop view and above */}
-					<DrvResponsive as={ DrvMenu.Menu } minWidth={769} className={ this.props.productMenu ? null : 'hide' }>
-						{ this.props.productMenu }
-					</DrvResponsive>
-
-					{/* Product Menu - Tablet view and below */}
-					<DrvResponsive as={ DrvMenu.Menu } maxWidth={768} className={ this.props.productMenu ? null : 'hide' }>
-						<DrvDropdown item icon='bars'>
-							<DrvDropdown.Menu>
-								{ this.props.productMenu }
-							</DrvDropdown.Menu>
-						</DrvDropdown>
-					</DrvResponsive>
-
-					{/* Admin Icons */}
-					<DrvMenu.Menu position='right'>
-
-						{/* Cloud update notifications popup */}
-						<DrvPopup
-							trigger={
-								<DrvMenu.Item>
-									<DrvIconWithBadge
-										icon='bullhorn'
-										labelColor='blue'
-										labelText={ this.props.cloudUpdateNotifications.length }
-									/>
-								</DrvMenu.Item>
-							}
-							content={
-								<DrvFeed>
-									{ this.platformUpdatesFeed() }
-								</DrvFeed>
-							}
-							on='click'
-							hideOnScroll
-							position='bottom center'
-							verticalOffset={-10}
-							horizontalOffset={-4}
-						/>
-
-						{/* Documentation menu popup */}
-						<DrvPopup
-							trigger={ <DrvMenu.Item icon='help circle' /> }
-							content={
-								<DrvList relaxed>
-									<DrvList.Item as='a' href={ this.props.documentationUrl }>
-										Documentation
-									</DrvList.Item>
-
-									<DrvList.Item as='a' href={ this.props.supportPortalUrl }>
-										Support Portal
-									</DrvList.Item>
-
-									<DrvList.Item as='a' href={ this.props.cloudStatusUrl }>
-										Cloud Status
-									</DrvList.Item>
-
-									<DrvList.Item as='a' href={ this.props.sendFeedbackUrl }>
-										Send Feedback
-									</DrvList.Item>
-								</DrvList>
-							}
-							on='click'
-							hideOnScroll
-							position='bottom center'
-							verticalOffset={-10}
-						/>
-
-						{/* Profile menu popup */}
-						<DrvPopup
-							trigger={
-								<DrvMenu.Item>
-									<DrvLabel circular size='tiny'>
-										{ this.getInitials() }
-									</DrvLabel>
-								</DrvMenu.Item>
-							}
-							content={
-								<DrvList relaxed>
-									<DrvList.Item>
-										<DrvList.Icon verticalAlign='middle'>
-											<DrvLabel
-												size='big'
-												color='green'
-												circular
-												content={ this.getInitials() }
-											/>
-										</DrvList.Icon>
-
-										<DrvList.Content verticalAlign='middle'>
-											<DrvList.Description as='a' href={ this.props.profileUrl } className='ellipsis'>
-												{ this.props.userEmail }
-											</DrvList.Description>
-										</DrvList.Content>
-									</DrvList.Item>
-
-									<DrvDivider />
-
-									<DrvButton primary floated='right' as='a' href={ this.props.logoutUrl }>
-										Log out
-									</DrvButton>
-								</DrvList>
-							}
-							on='click'
-							hideOnScroll
-							position='bottom center'
-							verticalOffset={-10}
-							horizontalOffset={-4}
-						/>
-					</DrvMenu.Menu>
-				</DrvMenu>
+				<DrvResponsive as={ DrvMenu.Menu } maxWidth={768}>
+					<DrvNavbarMobile
+						{ ...this.props }
+						cloudUpdateNotifications={ this.props.cloudUpdateNotifications }
+						platformUpdatesFeed={ this.platformUpdatesFeed }
+						getInitials={ this.getInitials }
+						toggleGlobalMenuVisibility={ this.toggleGlobalMenuVisibility }
+					/>
+				</DrvResponsive>
 
 				{/* Global flyout menu */}
 				<DrvSidebar.Pushable as={ DrvSegment }>
